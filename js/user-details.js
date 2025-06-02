@@ -2,13 +2,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const userDetailsModal = document.getElementById('userDetailsModal');
     const userDetailsForm = document.getElementById('userDetailsForm');
     const userDetailsButton = document.getElementById('userDetailsButton');
+    const updateProfileButton = document.getElementById('updateProfileButton');
+    const noProfileSection = document.getElementById('noProfileSection');
+    const profileSection = document.getElementById('profileSection');
 
     // Get user details from localStorage
     const userDetails = JSON.parse(localStorage.getItem('userDetails')) || {};
     
-    // Update all forms with user details if they exist
-    if (userDetails) {
-        updateAllForms(userDetails);
+    // Function to update profile display
+    function updateProfileDisplay() {
+        if (Object.keys(userDetails).length > 0) {
+            // Show profile section and hide no profile section
+            if (noProfileSection) noProfileSection.classList.add('hidden');
+            if (profileSection) profileSection.classList.remove('hidden');
+
+            // Update profile display
+            if (document.getElementById('profileName')) {
+                document.getElementById('profileName').textContent = `Name: ${userDetails.name || 'Not set'}`;
+                document.getElementById('profileAge').textContent = `Age: ${userDetails.age || 'Not set'}`;
+                document.getElementById('profileGender').textContent = `Gender: ${userDetails.gender || 'Not set'}`;
+                document.getElementById('profileWeight').textContent = `Weight: ${userDetails.weight || 'Not set'} kg`;
+                document.getElementById('profileHeight').textContent = `Height: ${userDetails.height || 'Not set'} cm`;
+                document.getElementById('profileActivity').textContent = `Activity: ${userDetails.activityLevel || 'Not set'}`;
+                document.getElementById('profileGoal').textContent = `Goal: ${userDetails.goal || 'Not set'}`;
+            }
+        } else {
+            // Show no profile section and hide profile section
+            if (noProfileSection) noProfileSection.classList.remove('hidden');
+            if (profileSection) profileSection.classList.add('hidden');
+        }
     }
 
     // Function to update all forms with user details
@@ -52,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             updateAllForms(userDetails);
+            updateProfileDisplay();
         });
     }
 
@@ -63,4 +86,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Handle update profile button click
+    if (updateProfileButton) {
+        updateProfileButton.addEventListener('click', function() {
+            if (userDetailsModal) {
+                // Pre-fill the form with existing data
+                Object.entries(userDetails).forEach(([key, value]) => {
+                    const input = userDetailsForm.querySelector(`[name="${key}"]`);
+                    if (input) input.value = value;
+                });
+                userDetailsModal.classList.remove('hidden');
+            }
+        });
+    }
+
+    // Initial update of profile display and forms
+    updateProfileDisplay();
+    updateAllForms(userDetails);
 }); 

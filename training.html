@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training Programs - MuscleMath</title>
+    <title>Training - MuscleMath</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        dark: {
+                        light: {
+                            50: '#ffffff',
+                            100: '#f8fafc',
+                            200: '#f1f5f9',
+                            300: '#e2e8f0',
+                            400: '#cbd5e1',
+                            500: '#94a3b8',
+                            600: '#64748b',
+                            700: '#475569',
+                            800: '#334155',
+                            900: '#1e293b',
+                        },
+                        primary: {
                             50: '#f8fafc',
                             100: '#f1f5f9',
                             200: '#e2e8f0',
@@ -21,35 +32,12 @@
                             600: '#475569',
                             700: '#334155',
                             800: '#1e293b',
-                            900: '#000000',
-                        },
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        accent: {
-                            50: '#fdf4ff',
-                            100: '#fae8ff',
-                            200: '#f5d0fe',
-                            300: '#f0abfc',
-                            400: '#e879f9',
-                            500: '#d946ef',
-                            600: '#c026d3',
-                            700: '#a21caf',
-                            800: '#86198f',
-                            900: '#701a75',
+                            900: '#0f172a',
                         }
                     },
                     boxShadow: {
-                        'glow': '0 0 15px rgba(14, 165, 233, 0.3)',
+                        'soft': '0 2px 15px rgba(0, 0, 0, 0.1)',
+                        'hover': '0 4px 20px rgba(0, 0, 0, 0.15)',
                     }
                 },
             },
@@ -57,26 +45,26 @@
     </script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-dark-900 text-dark-100 min-h-screen">
+<body class="bg-light-50 text-light-900 min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-dark-800 border-b border-dark-700">
+    <nav class="bg-white border-b border-light-200 shadow-soft">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="/" class="text-2xl font-bold text-primary-400 hover:text-primary-300 transition-colors">MuscleMath</a>
+                        <a href="/" class="text-2xl font-bold text-primary-900 hover:text-primary-800 transition-colors">MuscleMath</a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Home</a>
-                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Calculators</a>
-                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Nutrition</a>
-                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-400 border-b-2 border-primary-400">Training</a>
-                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Progress</a>
-                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Learn</a>
+                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Home</a>
+                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Calculators</a>
+                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Nutrition</a>
+                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-900 border-b-2 border-primary-900">Training</a>
+                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Progress</a>
+                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Learn</a>
                 </div>
                 <div class="flex items-center sm:hidden">
-                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-dark-400 hover:text-dark-100 hover:bg-dark-700 transition-colors">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-light-500 hover:text-light-900 hover:bg-light-100 transition-colors">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -87,43 +75,118 @@
         <!-- Mobile menu -->
         <div class="sm:hidden hidden mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="./" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Home</a>
-                <a href="./calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Calculators</a>
-                <a href="./nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Nutrition</a>
-                <a href="./training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-400 bg-dark-700">Training</a>
-                <a href="./progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Progress</a>
-                <a href="./learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Learn</a>
+                <a href="./" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Home</a>
+                <a href="./calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Calculators</a>
+                <a href="./nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Nutrition</a>
+                <a href="./training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-900 bg-light-100">Training</a>
+                <a href="./progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Progress</a>
+                <a href="./learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Learn</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold text-white mb-8">Training Programs</h1>
-        
-        <!-- Program Selection -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <button class="program-select card-glass rounded-lg p-6 text-left hover:bg-dark-700 transition-colors" data-program="beginner">
-                <h3 class="text-xl font-bold text-white mb-2">Beginner</h3>
-                <p class="text-dark-300">Perfect for those new to strength training</p>
-            </button>
-            <button class="program-select card-glass rounded-lg p-6 text-left hover:bg-dark-700 transition-colors" data-program="intermediate">
-                <h3 class="text-xl font-bold text-white mb-2">Intermediate</h3>
-                <p class="text-dark-300">For those with 6+ months of experience</p>
-            </button>
-            <button class="program-select card-glass rounded-lg p-6 text-left hover:bg-dark-700 transition-colors" data-program="advanced">
-                <h3 class="text-xl font-bold text-white mb-2">Advanced</h3>
-                <p class="text-dark-300">For experienced lifters</p>
-            </button>
+        <h1 class="text-4xl font-bold text-primary-900 mb-8">Training Programs</h1>
+
+        <!-- Workout Programs -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Strength Program -->
+            <div class="bg-white rounded-lg p-6 shadow-soft hover:shadow-hover transition-shadow">
+                <h2 class="text-2xl font-bold text-primary-900 mb-4">Strength Training</h2>
+                <p class="text-light-700 mb-4">Focus on building maximum strength with compound movements and progressive overload.</p>
+                <div class="space-y-4">
+                    <div class="bg-light-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-primary-900 mb-2">Key Exercises</h3>
+                        <ul class="list-disc list-inside text-light-700 space-y-2">
+                            <li>Bench Press</li>
+                            <li>Squats</li>
+                            <li>Deadlifts</li>
+                            <li>Overhead Press</li>
+                        </ul>
+                    </div>
+                    <div class="bg-light-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-primary-900 mb-2">Training Split</h3>
+                        <ul class="list-disc list-inside text-light-700 space-y-2">
+                            <li>Day 1: Chest & Triceps</li>
+                            <li>Day 2: Back & Biceps</li>
+                            <li>Day 3: Legs</li>
+                            <li>Day 4: Rest</li>
+                            <li>Day 5: Shoulders & Arms</li>
+                            <li>Day 6: Full Body</li>
+                            <li>Day 7: Rest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hypertrophy Program -->
+            <div class="bg-white rounded-lg p-6 shadow-soft hover:shadow-hover transition-shadow">
+                <h2 class="text-2xl font-bold text-primary-900 mb-4">Muscle Building</h2>
+                <p class="text-light-700 mb-4">Focus on muscle growth with moderate weights and higher volume training.</p>
+                <div class="space-y-4">
+                    <div class="bg-light-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-primary-900 mb-2">Key Exercises</h3>
+                        <ul class="list-disc list-inside text-light-700 space-y-2">
+                            <li>Incline Bench Press</li>
+                            <li>Romanian Deadlifts</li>
+                            <li>Pull-ups</li>
+                            <li>Lateral Raises</li>
+                        </ul>
+                    </div>
+                    <div class="bg-light-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-primary-900 mb-2">Training Split</h3>
+                        <ul class="list-disc list-inside text-light-700 space-y-2">
+                            <li>Day 1: Push (Chest/Shoulders/Triceps)</li>
+                            <li>Day 2: Pull (Back/Biceps)</li>
+                            <li>Day 3: Legs</li>
+                            <li>Day 4: Rest</li>
+                            <li>Day 5: Push</li>
+                            <li>Day 6: Pull</li>
+                            <li>Day 7: Rest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Endurance Program -->
+            <div class="bg-white rounded-lg p-6 shadow-soft hover:shadow-hover transition-shadow">
+                <h2 class="text-2xl font-bold text-primary-900 mb-4">Endurance Training</h2>
+                <p class="text-light-700 mb-4">Focus on muscular endurance and cardiovascular fitness.</p>
+                <div class="space-y-4">
+                    <div class="bg-light-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-primary-900 mb-2">Key Exercises</h3>
+                        <ul class="list-disc list-inside text-light-700 space-y-2">
+                            <li>Circuit Training</li>
+                            <li>HIIT Workouts</li>
+                            <li>Bodyweight Exercises</li>
+                            <li>Cardio Intervals</li>
+                        </ul>
+                    </div>
+                    <div class="bg-light-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-primary-900 mb-2">Training Split</h3>
+                        <ul class="list-disc list-inside text-light-700 space-y-2">
+                            <li>Day 1: Upper Body Circuit</li>
+                            <li>Day 2: Cardio & Core</li>
+                            <li>Day 3: Lower Body Circuit</li>
+                            <li>Day 4: Active Recovery</li>
+                            <li>Day 5: Full Body HIIT</li>
+                            <li>Day 6: Cardio & Mobility</li>
+                            <li>Day 7: Rest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Program Details -->
-        <div id="programDetails" class="card-glass rounded-lg p-6">
-            <h2 id="programTitle" class="text-2xl font-bold text-white mb-4"></h2>
-            <p id="programDescription" class="text-dark-300 mb-8"></p>
-            
-            <div id="workoutSchedule" class="space-y-8">
-                <!-- Workout schedule will be populated by JavaScript -->
+        <!-- Exercise Library -->
+        <div class="bg-white rounded-lg p-6 shadow-soft">
+            <h2 class="text-2xl font-bold text-primary-900 mb-4">Exercise Library</h2>
+            <div class="mb-4">
+                <input type="text" id="exerciseSearch" placeholder="Search exercises..." class="w-full rounded-md border-light-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="exerciseGrid">
+                <!-- Exercise cards will be added here dynamically -->
             </div>
         </div>
     </div>
