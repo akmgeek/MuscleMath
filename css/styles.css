@@ -6,15 +6,15 @@ html {
 }
 
 body {
-    background-color: #000000 !important;
-    color: #f1f5f9;
+    background-color: #F9F9F9 !important;
+    color: #333333;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Custom focus styles */
 .focus-ring:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3);
 }
 
 /* Custom transitions */
@@ -26,22 +26,22 @@ body {
 
 /* Custom form styles */
 .input-glass {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    color: #f1f5f9;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    color: #333333;
     padding: 0.5rem 1rem;
     width: 100%;
     transition: all 0.3s ease;
 }
 
 .input-glass:focus {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-color: rgba(14, 165, 233, 0.5);
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    background-color: #FFFFFF;
+    border-color: #27AE60;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
 }
 
 .input-glass::placeholder {
-    color: rgba(148, 163, 184, 0.7);
+    color: #94A3B8;
 }
 
 /* Remove number input spinners */
@@ -77,7 +77,16 @@ input:focus, select:focus, textarea:focus {
     position: relative;
     height: 300px;
     width: 100%;
-    @apply bg-dark-700 rounded-lg p-4;
+    max-width: 100%;
+    overflow: hidden;
+    @apply bg-white rounded-lg p-4;
+}
+
+.chart-container canvas {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* Custom button hover effects */
@@ -102,7 +111,7 @@ input:focus, select:focus, textarea:focus {
 
 /* Custom mobile menu animation */
 .mobile-menu {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #FFFFFF;
     backdrop-filter: blur(10px);
 }
 
@@ -140,16 +149,16 @@ input:focus, select:focus, textarea:focus {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.5);
+    background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(51, 65, 85, 0.8);
+    background: #CBD5E1;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(71, 85, 105, 0.8);
+    background: #94A3B8;
 }
 
 /* Custom loading animation */
@@ -161,7 +170,7 @@ input:focus, select:focus, textarea:focus {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(39, 174, 96, 0.2), transparent);
     animation: loading 1.5s infinite;
 }
 
@@ -182,12 +191,13 @@ input:focus, select:focus, textarea:focus {
     left: 50%;
     transform: translateX(-50%);
     padding: 0.5rem;
-    background-color: rgba(15, 23, 42, 0.9);
-    color: #f1f5f9;
+    background-color: #FFFFFF;
+    color: #333333;
     border-radius: 0.25rem;
     font-size: 0.875rem;
     white-space: nowrap;
     z-index: 10;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Custom badge styles */
@@ -198,24 +208,24 @@ input:focus, select:focus, textarea:focus {
     font-size: 0.75rem;
     font-weight: 600;
     border-radius: 9999px;
-    background-color: rgba(14, 165, 233, 0.2);
-    color: #38bdf8;
+    background-color: rgba(39, 174, 96, 0.2);
+    color: #27AE60;
 }
 
 .badge-primary {
-    @apply bg-primary-900 text-primary-100;
+    @apply bg-primary-100 text-primary-900;
 }
 
 .badge-success {
-    @apply bg-green-900 text-green-100;
+    @apply bg-green-100 text-green-900;
 }
 
 .badge-warning {
-    @apply bg-yellow-900 text-yellow-100;
+    @apply bg-yellow-100 text-yellow-900;
 }
 
 .badge-danger {
-    @apply bg-red-900 text-red-100;
+    @apply bg-red-100 text-red-900;
 }
 
 /* Custom alert styles */
@@ -226,32 +236,32 @@ input:focus, select:focus, textarea:focus {
 }
 
 .alert-success {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    color: #4ade80;
+    background-color: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #166534;
 }
 
 .alert-warning {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    color: #fbbf24;
+    background-color: #FFFBEB;
+    border: 1px solid #FEF3C7;
+    color: #92400E;
 }
 
 .alert-danger {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    color: #f87171;
+    background-color: #FEF2F2;
+    border: 1px solid #FEE2E2;
+    color: #991B1B;
 }
 
 .alert-info {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    color: #38bdf8;
+    background-color: #F0F9FF;
+    border: 1px solid #E0F2FE;
+    color: #075985;
 }
 
 /* Custom progress bar styles */
 .progress-bar {
-    @apply h-2 rounded-full bg-dark-700 overflow-hidden;
+    @apply h-2 rounded-full bg-gray-200 overflow-hidden;
 }
 
 .progress-bar-fill {
@@ -279,7 +289,7 @@ input:focus, select:focus, textarea:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #E2E8F0;
     transition: .4s;
     border-radius: 1.5rem;
 }
@@ -291,13 +301,13 @@ input:focus, select:focus, textarea:focus {
     width: 1.25rem;
     left: 0.125rem;
     bottom: 0.125rem;
-    background-color: #f1f5f9;
+    background-color: #FFFFFF;
     transition: .4s;
     border-radius: 50%;
 }
 
 input:checked + .toggle-slider {
-    background-color: #0ea5e9;
+    background-color: #27AE60;
 }
 
 input:checked + .toggle-slider:before {
@@ -306,7 +316,7 @@ input:checked + .toggle-slider:before {
 
 /* Glass morphism effect */
 .glass {
-    @apply bg-dark-800/50 backdrop-blur-lg border border-dark-700/50;
+    @apply bg-white/80 backdrop-blur-lg border border-gray-200/50;
 }
 
 /* Gradient text */
@@ -316,7 +326,7 @@ input:checked + .toggle-slider:before {
 
 /* Animated gradient background */
 .animated-gradient {
-    background: linear-gradient(-45deg, #0ea5e9, #0284c7, #0369a1, #075985);
+    background: linear-gradient(-45deg, #27AE60, #2D9CDB, #F2994A, #EB5757);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -335,49 +345,49 @@ input:checked + .toggle-slider:before {
 
 /* Card glass effect */
 .card-glass {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(51, 65, 85, 0.5);
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
 .card-glass:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-color: rgba(14, 165, 233, 0.5);
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+    background-color: #FFFFFF;
+    border-color: #27AE60;
+    box-shadow: 0 0 15px rgba(39, 174, 96, 0.3);
 }
 
 /* Button glass effect */
 .btn-glass {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    color: #f1f5f9;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    color: #333333;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
     transition: all 0.3s ease;
 }
 
 .btn-glass:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-color: rgba(14, 165, 233, 0.5);
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+    background-color: #FFFFFF;
+    border-color: #27AE60;
+    box-shadow: 0 0 15px rgba(39, 174, 96, 0.3);
 }
 
 /* Input glass effect */
 .input-glass {
-    @apply bg-dark-800/50 backdrop-blur-lg border border-dark-700/50;
-    @apply focus:bg-dark-800/70 transition-all duration-300;
+    @apply bg-white border-gray-200;
+    @apply focus:bg-white transition-all duration-300;
     @apply focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
 }
 
 /* Table glass effect */
 .table-glass {
-    @apply bg-dark-800/50 backdrop-blur-lg border border-dark-700/50;
+    @apply bg-white border-gray-200;
 }
 
 /* Chart glass effect */
 .chart-glass {
-    @apply bg-dark-800/50 backdrop-blur-lg border border-dark-700/50;
+    @apply bg-white border-gray-200;
     @apply p-4 rounded-lg;
 }
 
@@ -385,7 +395,7 @@ input:checked + .toggle-slider:before {
 .modal-backdrop {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
     z-index: 40;
 }
@@ -393,10 +403,10 @@ input:checked + .toggle-slider:before {
 /* Modal content */
 .modal-content {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.95);
-    border: 1px solid rgba(51, 65, 85, 0.5);
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: 0.5rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     z-index: 50;
 }
 
@@ -408,25 +418,25 @@ input:checked + .toggle-slider:before {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #e2e8f0;
+    color: #475569;
     font-size: 0.875rem;
     font-weight: 500;
 }
 
 /* Form validation */
 .input-glass.is-invalid {
-    border-color: rgba(239, 68, 68, 0.5);
+    border-color: #FCA5A5;
 }
 
 .input-glass.is-valid {
-    border-color: rgba(34, 197, 94, 0.5);
+    border-color: #86EFAC;
 }
 
 .invalid-feedback {
     display: none;
     margin-top: 0.25rem;
     font-size: 0.875rem;
-    color: #f87171;
+    color: #EF4444;
 }
 
 .input-glass.is-invalid + .invalid-feedback {
@@ -448,7 +458,7 @@ input:checked + .toggle-slider:before {
 
 /* Input styles */
 input, select {
-    @apply bg-white border-light-300 text-light-900;
+    @apply bg-white border-gray-200 text-gray-900;
 }
 
 input:focus, select:focus {
@@ -461,7 +471,7 @@ input:focus, select:focus {
 }
 
 .btn-secondary {
-    @apply bg-light-100 text-light-900 px-4 py-2 rounded-md hover:bg-light-200 transition-colors shadow-soft;
+    @apply bg-gray-100 text-gray-900 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors shadow-soft;
 }
 
 /* Card styles */
@@ -475,16 +485,16 @@ input:focus, select:focus {
 }
 
 .form-label {
-    @apply block text-sm font-medium text-light-700 mb-1;
+    @apply block text-sm font-medium text-gray-700 mb-1;
 }
 
 .form-input {
-    @apply mt-1 block w-full rounded-md border-light-300 shadow-sm focus:border-primary-500 focus:ring-primary-500;
+    @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500;
 }
 
 /* Navigation styles */
 .nav-link {
-    @apply text-light-700 hover:text-primary-500 transition-colors;
+    @apply text-gray-700 hover:text-primary-500 transition-colors;
 }
 
 .nav-link-active {
@@ -502,19 +512,19 @@ input:focus, select:focus {
 
 /* Table styles */
 .table {
-    @apply min-w-full divide-y divide-light-200;
+    @apply min-w-full divide-y divide-gray-200;
 }
 
 .table th {
-    @apply px-6 py-3 bg-light-50 text-left text-xs font-medium text-light-700 uppercase tracking-wider;
+    @apply px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-700 uppercase tracking-wider;
 }
 
 .table td {
-    @apply px-6 py-4 whitespace-nowrap text-sm text-light-900;
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
 }
 
 .table tr {
-    @apply hover:bg-light-50;
+    @apply hover:bg-gray-50;
 }
 
 /* Badge styles */
@@ -527,7 +537,7 @@ input:focus, select:focus {
 }
 
 .badge-secondary {
-    @apply bg-light-100 text-light-800;
+    @apply bg-gray-100 text-gray-800;
 }
 
 /* Alert styles */
@@ -553,7 +563,7 @@ input:focus, select:focus {
 
 /* Progress bar styles */
 .progress {
-    @apply w-full bg-light-200 rounded-full h-2.5;
+    @apply w-full bg-gray-200 rounded-full h-2.5;
 }
 
 .progress-bar {
@@ -566,7 +576,7 @@ input:focus, select:focus {
 }
 
 .tooltip-text {
-    @apply invisible absolute z-10 px-3 py-2 text-sm text-white bg-light-900 rounded-lg opacity-0 transition-opacity duration-300;
+    @apply invisible absolute z-10 px-3 py-2 text-sm text-white bg-gray-900 rounded-lg opacity-0 transition-opacity duration-300;
 }
 
 .tooltip:hover .tooltip-text {

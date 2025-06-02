@@ -5,63 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Calculators - MuscleMath</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        light: {
-                            50: '#ffffff',
-                            100: '#f8fafc',
-                            200: '#f1f5f9',
-                            300: '#e2e8f0',
-                            400: '#cbd5e1',
-                            500: '#94a3b8',
-                            600: '#64748b',
-                            700: '#475569',
-                            800: '#334155',
-                            900: '#1e293b',
-                        },
-                        primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                        primary: '#27AE60',
+                        secondary: '#2D9CDB',
+                        accent: '#F2994A',
+                        background: '#F9F9F9',
+                        card: '#FFFFFF',
+                        text: '#333333',
+                        danger: '#EB5757',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        code: ['Source Code Pro', 'monospace'],
+                    },
+                    borderRadius: {
+                        card: '1rem',
+                        button: '0.75rem',
+                        input: '0.5rem',
                     },
                     boxShadow: {
-                        'soft': '0 2px 15px rgba(0, 0, 0, 0.1)',
-                        'hover': '0 4px 20px rgba(0, 0, 0, 0.15)',
-                    }
+                        card: '0px 4px 12px rgba(0, 0, 0, 0.05)',
+                        input: '0px 2px 6px rgba(0, 0, 0, 0.05)',
+                    },
                 },
             },
         }
     </script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-light-50 text-light-900 min-h-screen">
+<body class="bg-background text-text font-body min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-white border-b border-light-200 shadow-soft">
+    <nav class="bg-card border-b border-gray-100 shadow-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="/" class="text-2xl font-bold text-primary-900 hover:text-primary-800 transition-colors">MuscleMath</a>
+                        <a href="/" class="text-2xl font-bold text-primary hover:text-green-600 transition-colors font-heading">
+                            <i class="fas fa-dumbbell mr-2"></i>MuscleMath
+                        </a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Home</a>
-                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-900 border-b-2 border-primary-900">Calculators</a>
-                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Nutrition</a>
-                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Training</a>
-                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Progress</a>
-                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Learn</a>
+                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-home mr-1"></i>Home
+                    </a>
+                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary border-b-2 border-primary">
+                        <i class="fas fa-calculator mr-1"></i>Calculators
+                    </a>
+                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-utensils mr-1"></i>Nutrition
+                    </a>
+                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-running mr-1"></i>Training
+                    </a>
+                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-chart-line mr-1"></i>Progress
+                    </a>
+                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-book mr-1"></i>Learn
+                    </a>
                 </div>
                 <div class="flex items-center sm:hidden">
                     <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-light-500 hover:text-light-900 hover:bg-light-100 transition-colors">
@@ -75,78 +84,96 @@
         <!-- Mobile menu -->
         <div class="sm:hidden hidden mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="./" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Home</a>
-                <a href="./calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-900 bg-light-100">Calculators</a>
-                <a href="./nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Nutrition</a>
-                <a href="./training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Training</a>
-                <a href="./progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Progress</a>
-                <a href="./learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">Learn</a>
+                <a href="./" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <a href="./calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-900 bg-light-100">
+                    <i class="fas fa-calculator mr-2"></i>Calculators
+                </a>
+                <a href="./nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                    <i class="fas fa-utensils mr-2"></i>Nutrition
+                </a>
+                <a href="./training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                    <i class="fas fa-running mr-2"></i>Training
+                </a>
+                <a href="./progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                    <i class="fas fa-chart-line mr-2"></i>Progress
+                </a>
+                <a href="./learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                    <i class="fas fa-book mr-2"></i>Learn
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-primary-900 mb-8">Fitness Calculators</h1>
+        <h1 class="text-3xl font-bold text-text mb-8 font-heading">
+            <i class="fas fa-calculator mr-3"></i>Fitness Calculators
+        </h1>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- BMI Calculator -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">BMI Calculator</h2>
+            <div class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-xl font-bold text-text mb-4 font-heading">
+                    <i class="fas fa-weight mr-2"></i>BMI Calculator
+                </h2>
                 <form id="bmiForm" class="space-y-4">
                     <div>
-                        <label for="weight" class="block text-sm font-medium text-light-700">Weight (kg)</label>
-                        <input type="number" id="weight" name="weight" required class="mt-1 block w-full rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
+                        <label for="weight" class="block text-sm font-medium text-gray-600">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" required class="mt-1 block w-full rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
                     </div>
                     <div>
-                        <label for="height" class="block text-sm font-medium text-light-700">Height (cm)</label>
-                        <input type="number" id="height" name="height" required class="mt-1 block w-full rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
+                        <label for="height" class="block text-sm font-medium text-gray-600">Height (cm)</label>
+                        <input type="number" id="height" name="height" required class="mt-1 block w-full rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
                     </div>
-                    <button type="submit" class="w-full bg-primary-900 text-white px-4 py-2 rounded-md hover:bg-primary-800 transition-colors shadow-soft">
-                        Calculate BMI
+                    <button type="submit" class="w-full bg-primary text-white px-4 py-2 rounded-button hover:bg-green-600 transition-colors">
+                        <i class="fas fa-calculator mr-2"></i>Calculate BMI
                     </button>
                 </form>
-                <div id="bmiResult" class="mt-4 p-4 bg-light-50 rounded-md hidden">
-                    <h3 class="text-lg font-semibold text-primary-900">Your BMI Result</h3>
+                <div id="bmiResult" class="mt-4 p-4 bg-background rounded-card hidden">
+                    <h3 class="text-lg font-semibold text-text font-heading">Your BMI Result</h3>
                     <div class="mt-2 space-y-2">
-                        <p class="text-light-700" id="bmiValue"></p>
-                        <p class="text-light-700" id="bmiCategory"></p>
+                        <p class="text-gray-600" id="bmiValue"></p>
+                        <p class="text-gray-600" id="bmiCategory"></p>
                     </div>
                 </div>
             </div>
 
             <!-- Body Fat Calculator -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">Body Fat Calculator</h2>
+            <div class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-xl font-bold text-text mb-4 font-heading">
+                    <i class="fas fa-percentage mr-2"></i>Body Fat Calculator
+                </h2>
                 <form id="bodyFatForm" class="space-y-4">
                     <div>
-                        <label for="gender" class="block text-sm font-medium text-light-700">Gender</label>
-                        <select id="gender" name="gender" required class="mt-1 block w-full rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
+                        <label for="gender" class="block text-sm font-medium text-gray-600">Gender</label>
+                        <select id="gender" name="gender" required class="mt-1 block w-full rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
                     </div>
                     <div>
-                        <label for="age" class="block text-sm font-medium text-light-700">Age</label>
-                        <input type="number" id="age" name="age" required class="mt-1 block w-full rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
+                        <label for="age" class="block text-sm font-medium text-gray-600">Age</label>
+                        <input type="number" id="age" name="age" required class="mt-1 block w-full rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
                     </div>
                     <div>
-                        <label for="weight" class="block text-sm font-medium text-light-700">Weight (kg)</label>
-                        <input type="number" id="weight" name="weight" required class="mt-1 block w-full rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
+                        <label for="weight" class="block text-sm font-medium text-gray-600">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" required class="mt-1 block w-full rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
                     </div>
                     <div>
-                        <label for="height" class="block text-sm font-medium text-light-700">Height (cm)</label>
-                        <input type="number" id="height" name="height" required class="mt-1 block w-full rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
+                        <label for="height" class="block text-sm font-medium text-gray-600">Height (cm)</label>
+                        <input type="number" id="height" name="height" required class="mt-1 block w-full rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
                     </div>
-                    <button type="submit" class="w-full bg-primary-900 text-white px-4 py-2 rounded-md hover:bg-primary-800 transition-colors shadow-soft">
-                        Calculate Body Fat
+                    <button type="submit" class="w-full bg-primary text-white px-4 py-2 rounded-button hover:bg-green-600 transition-colors">
+                        <i class="fas fa-calculator mr-2"></i>Calculate Body Fat
                     </button>
                 </form>
-                <div id="bodyFatResult" class="mt-4 p-4 bg-light-50 rounded-md hidden">
-                    <h3 class="text-lg font-semibold text-primary-900">Your Body Fat Result</h3>
+                <div id="bodyFatResult" class="mt-4 p-4 bg-background rounded-card hidden">
+                    <h3 class="text-lg font-semibold text-text font-heading">Your Body Fat Result</h3>
                     <div class="mt-2 space-y-2">
-                        <p class="text-light-700" id="bodyFatValue"></p>
-                        <p class="text-light-700" id="bodyFatCategory"></p>
+                        <p class="text-gray-600" id="bodyFatValue"></p>
+                        <p class="text-gray-600" id="bodyFatCategory"></p>
                     </div>
                 </div>
             </div>

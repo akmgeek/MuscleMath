@@ -5,47 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MuscleMath - Your Fitness Companion</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        light: {
-                            50: '#ffffff',
-                            100: '#f8fafc',
-                            200: '#f1f5f9',
-                            300: '#e2e8f0',
-                            400: '#cbd5e1',
-                            500: '#94a3b8',
-                            600: '#64748b',
-                            700: '#475569',
-                            800: '#334155',
-                            900: '#1e293b',
-                        },
-                        primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                        primary: '#27AE60',
+                        secondary: '#2D9CDB',
+                        accent: '#F2994A',
+                        background: '#F9F9F9',
+                        card: '#FFFFFF',
+                        text: '#333333',
+                        danger: '#EB5757',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        code: ['Source Code Pro', 'monospace'],
+                    },
+                    borderRadius: {
+                        card: '1rem',
+                        button: '0.75rem',
+                        input: '0.5rem',
                     },
                     boxShadow: {
-                        'soft': '0 2px 15px rgba(0, 0, 0, 0.1)',
-                        'hover': '0 4px 20px rgba(0, 0, 0, 0.15)',
-                    }
+                        card: '0px 4px 12px rgba(0, 0, 0, 0.05)',
+                        input: '0px 2px 6px rgba(0, 0, 0, 0.05)',
+                    },
                 },
             },
         }
     </script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-light-50 text-light-900 min-h-screen">
+<body class="bg-background text-text font-body min-h-screen">
     <!-- User Details Modal -->
     <div id="userDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
         <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4 shadow-soft">
@@ -111,21 +106,35 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white border-b border-light-200 shadow-soft">
+    <nav class="bg-card border-b border-gray-100 shadow-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="/" class="text-2xl font-bold text-primary-900 hover:text-primary-800 transition-colors">MuscleMath</a>
+                        <a href="/" class="text-2xl font-bold text-primary hover:text-green-600 transition-colors font-heading">
+                            <i class="fas fa-dumbbell mr-2"></i>MuscleMath
+                        </a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-900 border-b-2 border-primary-900">Home</a>
-                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Calculators</a>
-                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Nutrition</a>
-                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Training</a>
-                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Progress</a>
-                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">Learn</a>
+                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary border-b-2 border-primary">
+                        <i class="fas fa-home mr-1"></i>Home
+                    </a>
+                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-calculator mr-1"></i>Calculators
+                    </a>
+                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-utensils mr-1"></i>Nutrition
+                    </a>
+                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-running mr-1"></i>Training
+                    </a>
+                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-chart-line mr-1"></i>Progress
+                    </a>
+                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+                        <i class="fas fa-book mr-1"></i>Learn
+                    </a>
                 </div>
                 <div class="flex items-center sm:hidden">
                     <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-light-500 hover:text-light-900 hover:bg-light-100 transition-colors">
@@ -150,13 +159,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="relative bg-gradient-to-b from-light-50 to-white">
+    <div class="relative bg-gradient-to-b from-background to-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-extrabold text-primary-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+                <h1 class="text-4xl font-extrabold text-text sm:text-5xl sm:tracking-tight lg:text-6xl font-heading">
                     Your Personal Fitness Companion
                 </h1>
-                <p class="mt-6 max-w-2xl mx-auto text-xl text-light-600">
+                <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-600">
                     Track your progress, plan your nutrition, and follow personalized training programs - all in one place.
                 </p>
             </div>
@@ -207,41 +216,41 @@
     </div>
 
     <!-- Features Section -->
-    <div class="bg-light-50 py-12">
+    <div class="bg-background py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Calculators Card -->
-                <div class="bg-white rounded-lg p-6 shadow-soft hover:shadow-hover transform hover:scale-105 transition-all duration-300">
-                    <h3 class="text-xl font-bold text-primary-900 mb-4">Fitness Calculators</h3>
-                    <p class="text-light-600 mb-4">Calculate BMI, body fat, and more with our comprehensive calculators.</p>
-                    <a href="./calculators.html" class="bg-primary-900 text-white inline-block px-4 py-2 rounded-md hover:bg-primary-800 transition-colors shadow-soft">
+                <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <h3 class="text-xl font-bold text-text mb-4 font-heading">Fitness Calculators</h3>
+                    <p class="text-gray-600 mb-4">Calculate BMI, body fat, and more with our comprehensive calculators.</p>
+                    <a href="./calculators.html" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-green-600 transition-colors inline-block">
                         Try Calculators
                     </a>
                 </div>
 
                 <!-- Nutrition Card -->
-                <div class="bg-white rounded-lg p-6 shadow-soft hover:shadow-hover transform hover:scale-105 transition-all duration-300">
-                    <h3 class="text-xl font-bold text-primary-900 mb-4">Nutrition Planning</h3>
-                    <p class="text-light-600 mb-4">Get personalized meal plans and track your daily nutrition goals.</p>
-                    <a href="./nutrition.html" class="bg-primary-900 text-white inline-block px-4 py-2 rounded-md hover:bg-primary-800 transition-colors shadow-soft">
+                <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <h3 class="text-xl font-bold text-text mb-4 font-heading">Nutrition Planning</h3>
+                    <p class="text-gray-600 mb-4">Get personalized meal plans and track your daily nutrition goals.</p>
+                    <a href="./nutrition.html" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-green-600 transition-colors inline-block">
                         Plan Nutrition
                     </a>
                 </div>
 
                 <!-- Training Card -->
-                <div class="bg-white rounded-lg p-6 shadow-soft hover:shadow-hover transform hover:scale-105 transition-all duration-300">
-                    <h3 class="text-xl font-bold text-primary-900 mb-4">Training Programs</h3>
-                    <p class="text-light-600 mb-4">Follow structured workout programs designed for your fitness level.</p>
-                    <a href="./training.html" class="bg-primary-900 text-white inline-block px-4 py-2 rounded-md hover:bg-primary-800 transition-colors shadow-soft">
+                <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <h3 class="text-xl font-bold text-text mb-4 font-heading">Training Programs</h3>
+                    <p class="text-gray-600 mb-4">Follow structured workout programs designed for your fitness level.</p>
+                    <a href="./training.html" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-green-600 transition-colors inline-block">
                         View Programs
                     </a>
                 </div>
 
                 <!-- Progress Card -->
-                <div class="bg-white rounded-lg p-6 shadow-soft hover:shadow-hover transform hover:scale-105 transition-all duration-300">
-                    <h3 class="text-xl font-bold text-primary-900 mb-4">Progress Tracking</h3>
-                    <p class="text-light-600 mb-4">Track your measurements and visualize your fitness journey.</p>
-                    <a href="./progress.html" class="bg-primary-900 text-white inline-block px-4 py-2 rounded-md hover:bg-primary-800 transition-colors shadow-soft">
+                <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <h3 class="text-xl font-bold text-text mb-4 font-heading">Progress Tracking</h3>
+                    <p class="text-gray-600 mb-4">Track your measurements and visualize your fitness journey.</p>
+                    <a href="./progress.html" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-green-600 transition-colors inline-block">
                         Track Progress
                     </a>
                 </div>
