@@ -1,77 +1,66 @@
 document.addEventListener('DOMContentLoaded', function() {
     const userDetailsModal = document.getElementById('userDetailsModal');
     const userDetailsForm = document.getElementById('userDetailsForm');
+    const userDetailsButton = document.getElementById('userDetailsButton');
+
+    // Get user details from localStorage
+    const userDetails = JSON.parse(localStorage.getItem('userDetails')) || {};
     
-    // Check if user details exist in localStorage
-    const userDetails = JSON.parse(localStorage.getItem('userDetails'));
-    
-    // Show modal if user details don't exist
-    if (!userDetails) {
-        userDetailsModal.classList.remove('hidden');
-    } else {
-        // If user details exist, update all forms immediately
+    // Update all forms with user details if they exist
+    if (userDetails) {
         updateAllForms(userDetails);
     }
 
-    // Handle form submission
-    userDetailsForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Collect form data
-        const formData = {
-            name: document.getElementById('name').value,
-            age: document.getElementById('age').value,
-            gender: document.getElementById('gender').value,
-            weight: document.getElementById('weight').value,
-            height: document.getElementById('height').value,
-            activityLevel: document.getElementById('activityLevel').value,
-            goal: document.getElementById('goal').value
-        };
-
-        // Save to localStorage
-        localStorage.setItem('userDetails', JSON.stringify(formData));
-
-        // Hide modal
-        userDetailsModal.classList.add('hidden');
-
-        // Update all forms with the new data
-        updateAllForms(formData);
-    });
-
     // Function to update all forms with user details
     function updateAllForms(details) {
-        // Update nutrition page
-        const nutritionForm = document.getElementById('nutritionForm');
-        if (nutritionForm) {
-            const fields = ['weight', 'height', 'age', 'gender', 'activityLevel', 'goal'];
-            fields.forEach(field => {
-                const input = document.getElementById(field);
-                if (input) input.value = details[field];
-            });
-        }
+        const forms = {
+            nutrition: ['weight', 'height', 'age', 'gender', 'activityLevel', 'goal'],
+            progress: ['weight', 'height', 'age', 'gender'],
+            calculators: ['weight', 'height', 'age', 'gender'],
+            training: ['weight', 'height', 'age', 'gender', 'activityLevel', 'goal']
+        };
 
-        // Update progress page
-        const progressForm = document.getElementById('progressForm');
-        if (progressForm) {
-            const weightInput = document.getElementById('weight');
-            if (weightInput) weightInput.value = details.weight;
+        for (const [formId, fields] of Object.entries(forms)) {
+            const form = document.getElementById(`${formId}Form`);
+            if (form) {
+                fields.forEach(field => {
+                    const input = form.querySelector(`[name="${field}"]`);
+                    if (input && details[field]) {
+                        input.value = details[field];
+                    }
+                });
+            }
         }
+    }
 
-        // Update calculators page
-        const calculatorsForm = document.getElementById('calculatorsForm');
-        if (calculatorsForm) {
-            const fields = ['weight', 'height', 'age', 'gender'];
-            fields.forEach(field => {
-                const input = document.getElementById(field);
-                if (input) input.value = details[field];
-            });
-        }
+    // Handle form submission
+    if (userDetailsForm) {
+        userDetailsForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(userDetailsForm);
+            const userDetails = {};
+            
+            for (const [key, value] of formData.entries()) {
+                userDetails[key] = value;
+            }
+            
+            localStorage.setItem('userDetails', JSON.stringify(userDetails));
+            
+            if (userDetailsModal) {
+                userDetailsModal.classList.add('hidden');
+            }
+            
+            updateAllForms(userDetails);
+        });
+    }
 
-        // Update training page
-        const trainingForm = document.getElementById('trainingForm');
-        if (trainingForm) {
-            const goalSelect = document.getElementById('goal');
-            if (goalSelect) goalSelect.value = details.goal;
-        }
+    // Handle user details button click
+    if (userDetailsButton) {
+        userDetailsButton.addEventListener('click', function() {
+            if (userDetailsModal) {
+                userDetailsModal.classList.remove('hidden');
+            }
+        });
     }
 }); 

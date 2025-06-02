@@ -59,11 +59,16 @@
 </head>
 <body class="bg-dark-900 text-dark-100 min-h-screen">
     <!-- User Details Modal -->
-    <div id="userDetailsModal" class="fixed inset-0 bg-dark-900/90 backdrop-blur-sm z-50 flex items-center justify-center hidden">
-        <div class="card-glass rounded-lg p-8 max-w-2xl w-full mx-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Welcome to MuscleMath!</h2>
-            <p class="text-dark-300 mb-6">Please provide your details to get personalized fitness recommendations.</p>
-            
+    <div id="userDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-800 rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-white">Update Your Profile</h2>
+                <button class="text-dark-400 hover:text-dark-100 transition-colors" onclick="document.getElementById('userDetailsModal').classList.add('hidden')">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
             <form id="userDetailsForm" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -110,7 +115,7 @@
                 </div>
                 <div class="flex justify-end">
                     <button type="submit" class="btn-glass px-6 py-3 rounded-md text-white hover:bg-dark-700 transition-colors">
-                        Get Started
+                        Save Profile
                     </button>
                 </div>
             </form>
@@ -127,12 +132,12 @@
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="/" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-400 border-b-2 border-primary-400">Home</a>
-                    <a href="/calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Calculators</a>
-                    <a href="/nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Nutrition</a>
-                    <a href="/training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Training</a>
-                    <a href="/progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Progress</a>
-                    <a href="/learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Learn</a>
+                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-400 border-b-2 border-primary-400">Home</a>
+                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Calculators</a>
+                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Nutrition</a>
+                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Training</a>
+                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Progress</a>
+                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Learn</a>
                 </div>
                 <div class="flex items-center sm:hidden">
                     <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-dark-400 hover:text-dark-100 hover:bg-dark-700 transition-colors">
@@ -146,12 +151,12 @@
         <!-- Mobile menu -->
         <div class="sm:hidden hidden mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="/" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-400 bg-dark-700">Home</a>
-                <a href="/calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Calculators</a>
-                <a href="/nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Nutrition</a>
-                <a href="/training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Training</a>
-                <a href="/progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Progress</a>
-                <a href="/learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Learn</a>
+                <a href="./" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-400 bg-dark-700">Home</a>
+                <a href="./calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Calculators</a>
+                <a href="./nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Nutrition</a>
+                <a href="./training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Training</a>
+                <a href="./progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Progress</a>
+                <a href="./learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Learn</a>
             </div>
         </div>
     </nav>
@@ -171,60 +176,29 @@
     </div>
 
     <!-- User Details Section -->
-    <div class="bg-dark-900 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="card-glass rounded-lg p-8">
-                <h2 class="text-2xl font-bold text-white mb-6">Your Fitness Profile</h2>
-                <form id="userDetailsForm" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-dark-200">Name</label>
-                            <input type="text" id="name" name="name" required class="input-glass mt-1 block w-full rounded-md">
-                        </div>
-                        <div>
-                            <label for="age" class="block text-sm font-medium text-dark-200">Age</label>
-                            <input type="number" id="age" name="age" required class="input-glass mt-1 block w-full rounded-md">
-                        </div>
-                        <div>
-                            <label for="gender" class="block text-sm font-medium text-dark-200">Gender</label>
-                            <select id="gender" name="gender" required class="input-glass mt-1 block w-full rounded-md">
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="weight" class="block text-sm font-medium text-dark-200">Weight (kg)</label>
-                            <input type="number" id="weight" name="weight" required class="input-glass mt-1 block w-full rounded-md">
-                        </div>
-                        <div>
-                            <label for="height" class="block text-sm font-medium text-dark-200">Height (cm)</label>
-                            <input type="number" id="height" name="height" required class="input-glass mt-1 block w-full rounded-md">
-                        </div>
-                        <div>
-                            <label for="activityLevel" class="block text-sm font-medium text-dark-200">Activity Level</label>
-                            <select id="activityLevel" name="activityLevel" required class="input-glass mt-1 block w-full rounded-md">
-                                <option value="sedentary">Sedentary</option>
-                                <option value="light">Lightly Active</option>
-                                <option value="moderate">Moderately Active</option>
-                                <option value="very">Very Active</option>
-                                <option value="extra">Extra Active</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="goal" class="block text-sm font-medium text-dark-200">Fitness Goal</label>
-                            <select id="goal" name="goal" required class="input-glass mt-1 block w-full rounded-md">
-                                <option value="loss">Fat Loss</option>
-                                <option value="maintenance">Maintenance</option>
-                                <option value="gain">Muscle Gain</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <button type="submit" class="btn-glass px-6 py-3 rounded-md text-white hover:bg-dark-700 transition-colors">
-                            Save Profile
-                        </button>
-                    </div>
-                </form>
+    <div class="card-glass rounded-lg p-6 mb-8">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold text-white">Your Fitness Profile</h2>
+            <button id="userDetailsButton" class="btn-glass px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
+                Update Profile
+            </button>
+        </div>
+        <div id="userProfile" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-dark-800 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-white mb-2">Basic Info</h3>
+                <p class="text-dark-300" id="profileName">Not set</p>
+                <p class="text-dark-300" id="profileAge">Not set</p>
+                <p class="text-dark-300" id="profileGender">Not set</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-white mb-2">Measurements</h3>
+                <p class="text-dark-300" id="profileWeight">Not set</p>
+                <p class="text-dark-300" id="profileHeight">Not set</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-white mb-2">Goals</h3>
+                <p class="text-dark-300" id="profileActivity">Not set</p>
+                <p class="text-dark-300" id="profileGoal">Not set</p>
             </div>
         </div>
     </div>
@@ -237,7 +211,7 @@
                 <div class="card-glass rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-white mb-4">Fitness Calculators</h3>
                     <p class="text-dark-300 mb-4">Calculate BMI, body fat, and more with our comprehensive calculators.</p>
-                    <a href="/calculators.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
+                    <a href="./calculators.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
                         Try Calculators
                     </a>
                 </div>
@@ -246,7 +220,7 @@
                 <div class="card-glass rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-white mb-4">Nutrition Planning</h3>
                     <p class="text-dark-300 mb-4">Get personalized meal plans and track your daily nutrition goals.</p>
-                    <a href="/nutrition.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
+                    <a href="./nutrition.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
                         Plan Nutrition
                     </a>
                 </div>
@@ -255,7 +229,7 @@
                 <div class="card-glass rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-white mb-4">Training Programs</h3>
                     <p class="text-dark-300 mb-4">Follow structured workout programs designed for your fitness level.</p>
-                    <a href="/training.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
+                    <a href="./training.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
                         View Programs
                     </a>
                 </div>
@@ -264,7 +238,7 @@
                 <div class="card-glass rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-bold text-white mb-4">Progress Tracking</h3>
                     <p class="text-dark-300 mb-4">Track your measurements and visualize your fitness journey.</p>
-                    <a href="/progress.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
+                    <a href="./progress.html" class="btn-glass inline-block px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
                         Track Progress
                     </a>
                 </div>
