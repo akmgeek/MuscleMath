@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracking - FitCalc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#f0abfc',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                            800: '#86198f',
+                            900: '#701a75',
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(14, 165, 233, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-dark-800 border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="/" class="text-2xl font-bold text-primary-400 hover:text-primary-300 transition-colors">FitCalc</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="/" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Home</a>
+                    <a href="/calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Calculators</a>
+                    <a href="/nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Nutrition</a>
+                    <a href="/training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-dark-100 hover:text-primary-400 transition-colors">Training</a>
+                    <a href="/progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-400 border-b-2 border-primary-400">Progress</a>
+                </div>
+                <div class="flex items-center sm:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-dark-400 hover:text-dark-100 hover:bg-dark-700 transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="/" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Home</a>
+                <a href="/calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Calculators</a>
+                <a href="/nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Nutrition</a>
+                <a href="/training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-dark-100 hover:text-primary-400 hover:bg-dark-700 transition-colors">Training</a>
+                <a href="/progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-400 bg-dark-700">Progress</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+            <h1 class="text-3xl font-bold text-white mb-8">Progress Tracking</h1>
+            
+            <!-- Progress Form -->
+            <div class="card-glass rounded-lg p-6 mb-8">
+                <form id="progressForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-dark-200">Date</label>
+                            <input type="date" id="date" name="date" required class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="weight" class="block text-sm font-medium text-dark-200">Weight (kg)</label>
+                            <input type="number" id="weight" name="weight" required class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="chest" class="block text-sm font-medium text-dark-200">Chest (cm)</label>
+                            <input type="number" id="chest" name="chest" required class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="waist" class="block text-sm font-medium text-dark-200">Waist (cm)</label>
+                            <input type="number" id="waist" name="waist" required class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="hips" class="block text-sm font-medium text-dark-200">Hips (cm)</label>
+                            <input type="number" id="hips" name="hips" required class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="thighs" class="block text-sm font-medium text-dark-200">Thighs (cm)</label>
+                            <input type="number" id="thighs" name="thighs" required class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="arms" class="block text-sm font-medium text-dark-200">Arms (cm)</label>
+                            <input type="number" id="arms" name="arms" required class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="notes" class="block text-sm font-medium text-dark-200">Notes</label>
+                            <input type="text" id="notes" name="notes" class="input-glass mt-1 block w-full rounded-md">
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit" class="btn-glass px-4 py-2 rounded-md text-white hover:bg-dark-700 transition-colors">
+                            Save Progress
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Progress Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="card-glass rounded-lg p-6">
+                    <h2 class="text-xl font-bold text-white mb-4">Weight Progress</h2>
+                    <div class="chart-container">
+                        <canvas id="weightChart"></canvas>
+                    </div>
+                </div>
+                <div class="card-glass rounded-lg p-6">
+                    <h2 class="text-xl font-bold text-white mb-4">Measurements Progress</h2>
+                    <div class="chart-container">
+                        <canvas id="measurementsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress History -->
+            <div class="card-glass rounded-lg p-6">
+                <h2 class="text-xl font-bold text-white mb-4">Progress History</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-dark-700">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Weight</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Chest</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Waist</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Hips</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Thighs</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Arms</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-dark-300 uppercase tracking-wider">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="progressHistory" class="divide-y divide-dark-700">
+                            <!-- Progress history will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/progress.js"></script>
+</body>
+</html> 
