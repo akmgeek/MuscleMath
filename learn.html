@@ -5,81 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn - MuscleMath</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        light: {
-                            50: '#ffffff',
-                            100: '#f8fafc',
-                            200: '#f1f5f9',
-                            300: '#e2e8f0',
-                            400: '#cbd5e1',
-                            500: '#94a3b8',
-                            600: '#64748b',
-                            700: '#475569',
-                            800: '#334155',
-                            900: '#1e293b',
-                        },
-                        primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                        primary: '#27AE60',
+                        secondary: '#2D9CDB',
+                        accent: '#F2994A',
+                        background: '#F9F9F9',
+                        card: '#FFFFFF',
+                        text: '#333333',
+                        danger: '#EB5757',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        code: ['Source Code Pro', 'monospace'],
+                    },
+                    borderRadius: {
+                        card: '1rem',
+                        button: '0.75rem',
+                        input: '0.5rem',
                     },
                     boxShadow: {
-                        'soft': '0 2px 15px rgba(0, 0, 0, 0.1)',
-                        'hover': '0 4px 20px rgba(0, 0, 0, 0.15)',
-                    }
+                        card: '0px 4px 12px rgba(0, 0, 0, 0.05)',
+                        input: '0px 2px 6px rgba(0, 0, 0, 0.05)',
+                    },
                 },
             },
         }
     </script>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-light-50 text-light-900 min-h-screen">
+<body class="bg-background text-text font-body min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-white border-b border-light-200 shadow-soft">
+    <nav class="bg-card border-b border-gray-100 shadow-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="/" class="text-2xl font-bold text-primary-900 hover:text-primary-800 transition-colors">
+                        <a href="/" class="text-2xl font-bold text-primary hover:text-green-600 transition-colors font-heading">
                             <i class="fas fa-dumbbell mr-2"></i>MuscleMath
                         </a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-home mr-1"></i>Home
                     </a>
-                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-calculator mr-1"></i>Calculators
                     </a>
-                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-utensils mr-1"></i>Nutrition
                     </a>
-                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-running mr-1"></i>Training
                     </a>
-                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-chart-line mr-1"></i>Progress
                     </a>
-                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-900 border-b-2 border-primary-900">
+                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary border-b-2 border-primary">
                         <i class="fas fa-book mr-1"></i>Learn
                     </a>
                 </div>
                 <div class="flex items-center sm:hidden">
-                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-light-500 hover:text-light-900 hover:bg-light-100 transition-colors">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -90,22 +84,22 @@
         <!-- Mobile menu -->
         <div class="sm:hidden hidden mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="./" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                <a href="./" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors">
                     <i class="fas fa-home mr-2"></i>Home
                 </a>
-                <a href="./calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                <a href="./calculators.html" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors">
                     <i class="fas fa-calculator mr-2"></i>Calculators
                 </a>
-                <a href="./nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                <a href="./nutrition.html" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors">
                     <i class="fas fa-utensils mr-2"></i>Nutrition
                 </a>
-                <a href="./training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                <a href="./training.html" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors">
                     <i class="fas fa-running mr-2"></i>Training
                 </a>
-                <a href="./progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-light-700 hover:text-primary-900 hover:bg-light-100 transition-colors">
+                <a href="./progress.html" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors">
                     <i class="fas fa-chart-line mr-2"></i>Progress
                 </a>
-                <a href="./learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-primary-900 bg-light-100">
+                <a href="./learn.html" class="block pl-3 pr-4 py-2 text-base font-medium text-primary bg-gray-100">
                     <i class="fas fa-book mr-2"></i>Learn
                 </a>
             </div>
@@ -114,117 +108,238 @@
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-primary-900 mb-8">
+        <h1 class="text-4xl font-bold text-text mb-8 font-heading">
             <i class="fas fa-book mr-3"></i>Fitness Education
         </h1>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- BMI Guide -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
-                    <i class="fas fa-weight mr-2"></i>Understanding BMI
+        <!-- Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-primary mb-4">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-text mb-2 font-heading">Strength Training</h2>
+                <p class="text-gray-600 mb-4">Learn the fundamentals of strength training, proper form, and progressive overload.</p>
+                <a href="#strength" class="text-primary hover:text-green-600 transition-colors font-medium">
+                    Start Learning <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-primary mb-4">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-text mb-2 font-heading">Nutrition</h2>
+                <p class="text-gray-600 mb-4">Understand macronutrients, meal planning, and nutrition for optimal performance.</p>
+                <a href="#nutrition" class="text-primary hover:text-green-600 transition-colors font-medium">
+                    Start Learning <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-primary mb-4">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-text mb-2 font-heading">Recovery</h2>
+                <p class="text-gray-600 mb-4">Learn about rest, recovery, and injury prevention techniques.</p>
+                <a href="#recovery" class="text-primary hover:text-green-600 transition-colors font-medium">
+                    Start Learning <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <div class="bg-card rounded-card p-6 shadow-card hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-primary mb-4">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-text mb-2 font-heading">Mindset</h2>
+                <p class="text-gray-600 mb-4">Develop the mental strength and discipline needed for long-term success.</p>
+                <a href="#mindset" class="text-primary hover:text-green-600 transition-colors font-medium">
+                    Start Learning <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Articles -->
+        <div class="space-y-8">
+            <div id="strength" class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-2xl font-bold text-text mb-4 font-heading">
+                    <i class="fas fa-dumbbell mr-2"></i>Strength Training Basics
                 </h2>
-                <div class="space-y-4">
-                    <p class="text-light-700">Body Mass Index (BMI) is a measure of body fat based on height and weight. It's used to categorize a person as underweight, normal weight, overweight, or obese.</p>
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900 mb-2">BMI Categories</h3>
-                        <ul class="text-light-700 space-y-2">
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Underweight: BMI < 18.5</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Normal weight: BMI 18.5-24.9</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Overweight: BMI 25-29.9</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Obese: BMI ≥ 30</li>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">
+                        Strength training is a type of physical exercise specializing in the use of resistance to induce muscular contraction, which builds strength, anaerobic endurance, and size of skeletal muscles.
+                    </p>
+                    <h3 class="text-xl font-semibold text-text mb-2">Key Principles:</h3>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Progressive Overload: Gradually increasing weight, reps, or sets to challenge your muscles</li>
+                        <li>Proper Form and Technique: Ensuring correct movement patterns to prevent injury</li>
+                        <li>Rest and Recovery: Allowing muscles time to repair and grow stronger</li>
+                        <li>Consistency: Maintaining a regular training schedule</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-text mb-2">Basic Exercises:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Upper Body</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Bench Press</li>
+                                <li>• Overhead Press</li>
+                                <li>• Pull-ups</li>
+                                <li>• Rows</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Lower Body</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Squats</li>
+                                <li>• Deadlifts</li>
+                                <li>• Lunges</li>
+                                <li>• Calf Raises</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-text mb-2">Training Frequency:</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Beginners: 2-3 times per week</li>
+                            <li>• Intermediate: 3-4 times per week</li>
+                            <li>• Advanced: 4-6 times per week</li>
+                            <li>• Allow 48-72 hours between training the same muscle group</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- TDEE Guide -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
-                    <i class="fas fa-fire mr-2"></i>Understanding TDEE
+            <div id="nutrition" class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-2xl font-bold text-text mb-4 font-heading">
+                    <i class="fas fa-utensils mr-2"></i>Nutrition Fundamentals
                 </h2>
-                <div class="space-y-4">
-                    <p class="text-light-700">Total Daily Energy Expenditure (TDEE) is the total number of calories you burn each day, including basal metabolic rate and physical activity.</p>
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900 mb-2">Activity Levels</h3>
-                        <ul class="text-light-700 space-y-2">
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Sedentary: Little or no exercise</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Light: Light exercise 1-3 days/week</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Moderate: Moderate exercise 3-5 days/week</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Active: Hard exercise 6-7 days/week</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Very Active: Very hard exercise & physical job</li>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">
+                        Proper nutrition is essential for muscle growth, recovery, and overall performance. Understanding macronutrients and their roles is crucial for achieving your fitness goals.
+                    </p>
+                    <h3 class="text-xl font-semibold text-text mb-2">Macronutrients:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Proteins</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Building blocks for muscle</li>
+                                <li>• 1.6-2.2g per kg bodyweight</li>
+                                <li>• Sources: Chicken, fish, eggs, dairy</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Carbohydrates</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Primary energy source</li>
+                                <li>• 4-7g per kg bodyweight</li>
+                                <li>• Sources: Rice, oats, potatoes, fruits</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Fats</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Essential for hormone production</li>
+                                <li>• 0.5-1.5g per kg bodyweight</li>
+                                <li>• Sources: Avocados, nuts, olive oil</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-text mb-2">Meal Timing:</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Pre-workout: Carbs + protein 1-2 hours before</li>
+                            <li>• Post-workout: Protein + carbs within 30 minutes</li>
+                            <li>• Regular meals: Every 3-4 hours</li>
+                            <li>• Stay hydrated: 3-4 liters of water daily</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Macronutrients Guide -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
-                    <i class="fas fa-drumstick-bite mr-2"></i>Understanding Macronutrients
+            <div id="recovery" class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-2xl font-bold text-text mb-4 font-heading">
+                    <i class="fas fa-heartbeat mr-2"></i>Recovery and Rest
                 </h2>
-                <div class="space-y-4">
-                    <p class="text-light-700">Macronutrients are the nutrients your body needs in large amounts: protein, carbohydrates, and fats.</p>
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900 mb-2">Macronutrient Functions</h3>
-                        <ul class="text-light-700 space-y-2">
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Protein: Builds and repairs muscle tissue</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Carbs: Primary energy source</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Fats: Essential for hormone production</li>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">
+                        Recovery is just as important as training itself. Proper rest and recovery techniques help prevent injury and optimize performance.
+                    </p>
+                    <h3 class="text-xl font-semibold text-text mb-2">Recovery Methods:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Physical Recovery</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Sleep: 7-9 hours per night</li>
+                                <li>• Stretching: 10-15 minutes daily</li>
+                                <li>• Foam rolling: Target tight muscles</li>
+                                <li>• Active recovery: Light cardio or mobility work</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Recovery Techniques</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Ice baths: Reduce inflammation</li>
+                                <li>• Massage: Improve blood flow</li>
+                                <li>• Compression: Reduce swelling</li>
+                                <li>• Proper nutrition: Support recovery</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-text mb-2">Injury Prevention:</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Warm up properly before training</li>
+                            <li>• Use correct form and technique</li>
+                            <li>• Don't increase weight too quickly</li>
+                            <li>• Listen to your body's signals</li>
+                            <li>• Take rest days when needed</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Training Terms -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
-                    <i class="fas fa-dumbbell mr-2"></i>Training Terms
+            <div id="mindset" class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-2xl font-bold text-text mb-4 font-heading">
+                    <i class="fas fa-brain mr-2"></i>Mental Strength
                 </h2>
-                <div class="space-y-4">
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900 mb-2">Common Terms</h3>
-                        <ul class="text-light-700 space-y-2">
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Reps: Number of times you perform an exercise</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Sets: Number of groups of reps</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Rest: Time between sets</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Progressive Overload: Gradually increasing weight</li>
-                        </ul>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">
+                        Success in fitness requires more than just physical strength. Developing the right mindset is crucial for long-term progress and consistency.
+                    </p>
+                    <h3 class="text-xl font-semibold text-text mb-2">Key Mental Aspects:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Goal Setting</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Set SMART goals</li>
+                                <li>• Break down long-term goals</li>
+                                <li>• Track progress regularly</li>
+                                <li>• Celebrate small wins</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-text mb-2">Motivation</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Find your "why"</li>
+                                <li>• Create a routine</li>
+                                <li>• Stay accountable</li>
+                                <li>• Visualize success</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Nutrition Terms -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
-                    <i class="fas fa-utensils mr-2"></i>Nutrition Terms
-                </h2>
-                <div class="space-y-4">
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900 mb-2">Common Terms</h3>
-                        <ul class="text-light-700 space-y-2">
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Calories: Unit of energy</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Macros: Protein, carbs, and fats</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Micros: Vitamins and minerals</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>BMR: Basal Metabolic Rate</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Progress Terms -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
-                    <i class="fas fa-chart-line mr-2"></i>Progress Terms
-                </h2>
-                <div class="space-y-4">
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900 mb-2">Common Terms</h3>
-                        <ul class="text-light-700 space-y-2">
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Plateau: Progress stagnation</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Deload: Reducing training intensity</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Overtraining: Excessive training</li>
-                            <li><i class="fas fa-check mr-2 text-primary-900"></i>Recovery: Rest and repair period</li>
+                    <h3 class="text-xl font-semibold text-text mb-2">Overcoming Challenges:</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Plateaus: Change your approach</li>
+                            <li>• Lack of motivation: Remember your goals</li>
+                            <li>• Time management: Prioritize and plan</li>
+                            <li>• Setbacks: Learn and adapt</li>
+                            <li>• Consistency: Build habits</li>
                         </ul>
                     </div>
                 </div>

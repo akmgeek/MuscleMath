@@ -5,76 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training - MuscleMath</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        light: {
-                            50: '#ffffff',
-                            100: '#f8fafc',
-                            200: '#f1f5f9',
-                            300: '#e2e8f0',
-                            400: '#cbd5e1',
-                            500: '#94a3b8',
-                            600: '#64748b',
-                            700: '#475569',
-                            800: '#334155',
-                            900: '#1e293b',
-                        },
-                        primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                        primary: '#27AE60',
+                        secondary: '#2D9CDB',
+                        accent: '#F2994A',
+                        background: '#F9F9F9',
+                        card: '#FFFFFF',
+                        text: '#333333',
+                        danger: '#EB5757',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        code: ['Source Code Pro', 'monospace'],
+                    },
+                    borderRadius: {
+                        card: '1rem',
+                        button: '0.75rem',
+                        input: '0.5rem',
                     },
                     boxShadow: {
-                        'soft': '0 2px 15px rgba(0, 0, 0, 0.1)',
-                        'hover': '0 4px 20px rgba(0, 0, 0, 0.15)',
-                    }
+                        card: '0px 4px 12px rgba(0, 0, 0, 0.05)',
+                        input: '0px 2px 6px rgba(0, 0, 0, 0.05)',
+                    },
                 },
             },
         }
     </script>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-light-50 text-light-900 min-h-screen">
+<body class="bg-background text-text font-body min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-white border-b border-light-200 shadow-soft">
+    <nav class="bg-card border-b border-gray-100 shadow-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="/" class="text-2xl font-bold text-primary-900 hover:text-primary-800 transition-colors">
+                        <a href="/" class="text-2xl font-bold text-primary hover:text-green-600 transition-colors font-heading">
                             <i class="fas fa-dumbbell mr-2"></i>MuscleMath
                         </a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-home mr-1"></i>Home
                     </a>
-                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-calculator mr-1"></i>Calculators
                     </a>
-                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-utensils mr-1"></i>Nutrition
                     </a>
-                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-900 border-b-2 border-primary-900">
+                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary border-b-2 border-primary">
                         <i class="fas fa-running mr-1"></i>Training
                     </a>
-                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-chart-line mr-1"></i>Progress
                     </a>
-                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-book mr-1"></i>Learn
                     </a>
                 </div>
@@ -114,149 +108,69 @@
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-primary-900 mb-8">
+        <h1 class="text-4xl font-bold text-text mb-8 font-heading">
             <i class="fas fa-running mr-3"></i>Training Programs
         </h1>
 
+        <!-- Program Selection -->
+        <div class="mb-8">
+            <div class="flex space-x-4 mb-6">
+                <button class="program-select bg-primary text-white px-6 py-3 rounded-button hover:bg-green-600 transition-colors" data-program="beginner">
+                    Beginner
+                </button>
+                <button class="program-select bg-gray-200 text-gray-700 px-6 py-3 rounded-button hover:bg-gray-300 transition-colors" data-program="intermediate">
+                    Intermediate
+                </button>
+                <button class="program-select bg-gray-200 text-gray-700 px-6 py-3 rounded-button hover:bg-gray-300 transition-colors" data-program="advanced">
+                    Advanced
+                </button>
+            </div>
+            <div class="bg-card rounded-card p-6 shadow-card">
+                <h2 id="programTitle" class="text-2xl font-bold text-text mb-2 font-heading">Beginner Program</h2>
+                <p id="programDescription" class="text-gray-600 mb-6">Perfect for those new to strength training. Focus on proper form and building a foundation.</p>
+                <div id="workoutSchedule" class="space-y-6">
+                    <!-- Workout schedule will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Workout Programs -->
+            <!-- Exercise Library -->
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-lg p-6 shadow-soft">
-                    <h2 class="text-xl font-bold text-primary-900 mb-4">
-                        <i class="fas fa-dumbbell mr-2"></i>Workout Programs
+                <div class="bg-card rounded-card p-6 shadow-card">
+                    <h2 class="text-2xl font-bold text-text mb-4 font-heading">
+                        <i class="fas fa-book mr-2"></i>Exercise Library
                     </h2>
-                    <div class="space-y-6">
-                        <!-- Strength Training -->
-                        <div class="bg-light-50 p-6 rounded-lg">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold text-primary-900">
-                                    <i class="fas fa-weight-hanging mr-2"></i>Strength Training
-                                </h3>
-                                <button class="text-primary-900 hover:text-primary-800 transition-colors">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                            <p class="text-light-700 mb-4">Focus on building maximum strength through compound movements and progressive overload.</p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white p-4 rounded-lg shadow-soft">
-                                    <h4 class="font-semibold text-primary-900 mb-2">Day 1: Upper Body</h4>
-                                    <ul class="text-light-700 space-y-2">
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Bench Press</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Overhead Press</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Rows</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-4 rounded-lg shadow-soft">
-                                    <h4 class="font-semibold text-primary-900 mb-2">Day 2: Lower Body</h4>
-                                    <ul class="text-light-700 space-y-2">
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Squats</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Deadlifts</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Lunges</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Muscle Building -->
-                        <div class="bg-light-50 p-6 rounded-lg">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold text-primary-900">
-                                    <i class="fas fa-muscle mr-2"></i>Muscle Building
-                                </h3>
-                                <button class="text-primary-900 hover:text-primary-800 transition-colors">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                            <p class="text-light-700 mb-4">Hypertrophy-focused program for maximum muscle growth and definition.</p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white p-4 rounded-lg shadow-soft">
-                                    <h4 class="font-semibold text-primary-900 mb-2">Day 1: Chest & Triceps</h4>
-                                    <ul class="text-light-700 space-y-2">
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Incline Bench Press</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Cable Flyes</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Tricep Pushdowns</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-4 rounded-lg shadow-soft">
-                                    <h4 class="font-semibold text-primary-900 mb-2">Day 2: Back & Biceps</h4>
-                                    <ul class="text-light-700 space-y-2">
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Pull-ups</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Barbell Rows</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Bicep Curls</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Endurance Training -->
-                        <div class="bg-light-50 p-6 rounded-lg">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold text-primary-900">
-                                    <i class="fas fa-heartbeat mr-2"></i>Endurance Training
-                                </h3>
-                                <button class="text-primary-900 hover:text-primary-800 transition-colors">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                            <p class="text-light-700 mb-4">Improve cardiovascular fitness and muscular endurance.</p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white p-4 rounded-lg shadow-soft">
-                                    <h4 class="font-semibold text-primary-900 mb-2">Day 1: HIIT</h4>
-                                    <ul class="text-light-700 space-y-2">
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Burpees</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Mountain Climbers</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Jump Rope</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-4 rounded-lg shadow-soft">
-                                    <h4 class="font-semibold text-primary-900 mb-2">Day 2: Cardio</h4>
-                                    <ul class="text-light-700 space-y-2">
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Running</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Cycling</li>
-                                        <li><i class="fas fa-check mr-2 text-primary-900"></i>Swimming</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="mb-4">
+                        <input type="text" id="exerciseSearch" placeholder="Search exercises..." class="w-full px-4 py-2 rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
+                    </div>
+                    <div id="exerciseList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Exercises will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
 
-            <!-- Exercise Library -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
-                    <i class="fas fa-book mr-2"></i>Exercise Library
+            <!-- Quick Tips -->
+            <div class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-2xl font-bold text-text mb-4 font-heading">
+                    <i class="fas fa-lightbulb mr-2"></i>Quick Tips
                 </h2>
-                <div class="mb-4">
-                    <input type="text" placeholder="Search exercises..." class="w-full px-4 py-2 rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
-                </div>
                 <div class="space-y-4">
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900">Bench Press</h3>
-                        <p class="text-sm text-light-600">Primary: Chest</p>
-                        <p class="text-sm text-light-600">Secondary: Triceps, Shoulders</p>
-                        <div class="mt-2">
-                            <span class="inline-block bg-primary-100 text-primary-900 px-2 py-1 rounded text-sm">Compound</span>
-                            <span class="inline-block bg-primary-100 text-primary-900 px-2 py-1 rounded text-sm">Push</span>
-                        </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-text mb-2">Proper Form</h3>
+                        <p class="text-gray-600 text-sm">Always prioritize proper form over weight. This prevents injuries and ensures effective muscle engagement.</p>
                     </div>
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900">Squats</h3>
-                        <p class="text-sm text-light-600">Primary: Quadriceps</p>
-                        <p class="text-sm text-light-600">Secondary: Glutes, Hamstrings</p>
-                        <div class="mt-2">
-                            <span class="inline-block bg-primary-100 text-primary-900 px-2 py-1 rounded text-sm">Compound</span>
-                            <span class="inline-block bg-primary-100 text-primary-900 px-2 py-1 rounded text-sm">Legs</span>
-                        </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-text mb-2">Progressive Overload</h3>
+                        <p class="text-gray-600 text-sm">Gradually increase weight or reps to continue making progress and building strength.</p>
                     </div>
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900">Deadlift</h3>
-                        <p class="text-sm text-light-600">Primary: Back</p>
-                        <p class="text-sm text-light-600">Secondary: Hamstrings, Glutes</p>
-                        <div class="mt-2">
-                            <span class="inline-block bg-primary-100 text-primary-900 px-2 py-1 rounded text-sm">Compound</span>
-                            <span class="inline-block bg-primary-100 text-primary-900 px-2 py-1 rounded text-sm">Pull</span>
-                        </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-text mb-2">Rest & Recovery</h3>
+                        <p class="text-gray-600 text-sm">Allow adequate rest between sets and workouts. Muscles grow during recovery, not during exercise.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-text mb-2">Warm-up</h3>
+                        <p class="text-gray-600 text-sm">Always warm up properly before lifting weights to prepare your muscles and prevent injuries.</p>
                     </div>
                 </div>
             </div>

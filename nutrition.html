@@ -5,76 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutrition - MuscleMath</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        light: {
-                            50: '#ffffff',
-                            100: '#f8fafc',
-                            200: '#f1f5f9',
-                            300: '#e2e8f0',
-                            400: '#cbd5e1',
-                            500: '#94a3b8',
-                            600: '#64748b',
-                            700: '#475569',
-                            800: '#334155',
-                            900: '#1e293b',
-                        },
-                        primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                        primary: '#27AE60',
+                        secondary: '#2D9CDB',
+                        accent: '#F2994A',
+                        background: '#F9F9F9',
+                        card: '#FFFFFF',
+                        text: '#333333',
+                        danger: '#EB5757',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        code: ['Source Code Pro', 'monospace'],
+                    },
+                    borderRadius: {
+                        card: '1rem',
+                        button: '0.75rem',
+                        input: '0.5rem',
                     },
                     boxShadow: {
-                        'soft': '0 2px 15px rgba(0, 0, 0, 0.1)',
-                        'hover': '0 4px 20px rgba(0, 0, 0, 0.15)',
-                    }
+                        card: '0px 4px 12px rgba(0, 0, 0, 0.05)',
+                        input: '0px 2px 6px rgba(0, 0, 0, 0.05)',
+                    },
                 },
             },
         }
     </script>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-light-50 text-light-900 min-h-screen">
+<body class="bg-background text-text font-body min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-white border-b border-light-200 shadow-soft">
+    <nav class="bg-card border-b border-gray-100 shadow-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="/" class="text-2xl font-bold text-primary-900 hover:text-primary-800 transition-colors">
+                        <a href="/" class="text-2xl font-bold text-primary hover:text-green-600 transition-colors font-heading">
                             <i class="fas fa-dumbbell mr-2"></i>MuscleMath
                         </a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-home mr-1"></i>Home
                     </a>
-                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./calculators.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-calculator mr-1"></i>Calculators
                     </a>
-                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary-900 border-b-2 border-primary-900">
+                    <a href="./nutrition.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary border-b-2 border-primary">
                         <i class="fas fa-utensils mr-1"></i>Nutrition
                     </a>
-                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./training.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-running mr-1"></i>Training
                     </a>
-                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./progress.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-chart-line mr-1"></i>Progress
                     </a>
-                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-light-700 hover:text-primary-900 transition-colors">
+                    <a href="./learn.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                         <i class="fas fa-book mr-1"></i>Learn
                     </a>
                 </div>
@@ -114,136 +108,136 @@
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-primary-900 mb-8">
+        <h1 class="text-4xl font-bold text-text mb-8 font-heading">
             <i class="fas fa-utensils mr-3"></i>Nutrition Planning
         </h1>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Daily Nutrition Goals -->
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-lg p-6 shadow-soft">
-                    <h2 class="text-xl font-bold text-primary-900 mb-4">
+                <div class="bg-card rounded-card p-6 shadow-card">
+                    <h2 class="text-2xl font-bold text-text mb-4 font-heading">
                         <i class="fas fa-bullseye mr-2"></i>Daily Nutrition Goals
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-text mb-2">
                                 <i class="fas fa-fire mr-2"></i>Calories
                             </h3>
-                            <p class="text-2xl font-bold text-primary-900" id="calorieGoal">0</p>
-                            <p class="text-sm text-light-600">Daily Target</p>
+                            <p class="text-2xl font-bold text-text" id="calorieGoal">0</p>
+                            <p class="text-sm text-gray-600">Daily Target</p>
                         </div>
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-text mb-2">
                                 <i class="fas fa-drumstick-bite mr-2"></i>Protein
                             </h3>
-                            <p class="text-2xl font-bold text-primary-900" id="proteinGoal">0g</p>
-                            <p class="text-sm text-light-600">Daily Target</p>
+                            <p class="text-2xl font-bold text-text" id="proteinGoal">0g</p>
+                            <p class="text-sm text-gray-600">Daily Target</p>
                         </div>
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-text mb-2">
                                 <i class="fas fa-bread-slice mr-2"></i>Carbs
                             </h3>
-                            <p class="text-2xl font-bold text-primary-900" id="carbsGoal">0g</p>
-                            <p class="text-sm text-light-600">Daily Target</p>
+                            <p class="text-2xl font-bold text-text" id="carbsGoal">0g</p>
+                            <p class="text-sm text-gray-600">Daily Target</p>
                         </div>
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-text mb-2">
                                 <i class="fas fa-cheese mr-2"></i>Fats
                             </h3>
-                            <p class="text-2xl font-bold text-primary-900" id="fatsGoal">0g</p>
-                            <p class="text-sm text-light-600">Daily Target</p>
+                            <p class="text-2xl font-bold text-text" id="fatsGoal">0g</p>
+                            <p class="text-sm text-gray-600">Daily Target</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Meal Planning -->
-                <div class="bg-white rounded-lg p-6 shadow-soft mt-8">
-                    <h2 class="text-xl font-bold text-primary-900 mb-4">
+                <div class="bg-card rounded-card p-6 shadow-card mt-8">
+                    <h2 class="text-2xl font-bold text-text mb-4 font-heading">
                         <i class="fas fa-calendar-alt mr-2"></i>Meal Planning
                     </h2>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-primary-900">
+                            <h3 class="text-lg font-semibold text-text">
                                 <i class="fas fa-sun mr-2"></i>Breakfast
                             </h3>
-                            <button class="text-primary-900 hover:text-primary-800 transition-colors">
+                            <button class="text-primary hover:text-green-600 transition-colors">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <p class="text-light-600">No meals added yet</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-gray-600">No meals added yet</p>
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-primary-900">
+                            <h3 class="text-lg font-semibold text-text">
                                 <i class="fas fa-cloud-sun mr-2"></i>Lunch
                             </h3>
-                            <button class="text-primary-900 hover:text-primary-800 transition-colors">
+                            <button class="text-primary hover:text-green-600 transition-colors">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <p class="text-light-600">No meals added yet</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-gray-600">No meals added yet</p>
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-primary-900">
+                            <h3 class="text-lg font-semibold text-text">
                                 <i class="fas fa-moon mr-2"></i>Dinner
                             </h3>
-                            <button class="text-primary-900 hover:text-primary-800 transition-colors">
+                            <button class="text-primary hover:text-green-600 transition-colors">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <p class="text-light-600">No meals added yet</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-gray-600">No meals added yet</p>
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-primary-900">
+                            <h3 class="text-lg font-semibold text-text">
                                 <i class="fas fa-cookie mr-2"></i>Snacks
                             </h3>
-                            <button class="text-primary-900 hover:text-primary-800 transition-colors">
+                            <button class="text-primary hover:text-green-600 transition-colors">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <div class="bg-light-50 p-4 rounded-lg">
-                            <p class="text-light-600">No snacks added yet</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-gray-600">No snacks added yet</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Food Database -->
-            <div class="bg-white rounded-lg p-6 shadow-soft">
-                <h2 class="text-xl font-bold text-primary-900 mb-4">
+            <div class="bg-card rounded-card p-6 shadow-card">
+                <h2 class="text-2xl font-bold text-text mb-4 font-heading">
                     <i class="fas fa-database mr-2"></i>Food Database
                 </h2>
                 <div class="mb-4">
-                    <input type="text" placeholder="Search foods..." class="w-full px-4 py-2 rounded-md border-light-300 shadow-sm focus:border-primary-900 focus:ring-primary-900">
+                    <input type="text" placeholder="Search foods..." class="w-full px-4 py-2 rounded-input border-gray-300 shadow-input focus:border-primary focus:ring-primary">
                 </div>
                 <div class="space-y-4">
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900">Chicken Breast</h3>
-                        <p class="text-sm text-light-600">100g - 165 calories</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-text">Chicken Breast</h3>
+                        <p class="text-sm text-gray-600">100g - 165 calories</p>
                         <div class="mt-2 flex justify-between text-sm">
                             <span>Protein: 31g</span>
                             <span>Carbs: 0g</span>
                             <span>Fats: 3.6g</span>
                         </div>
                     </div>
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900">Brown Rice</h3>
-                        <p class="text-sm text-light-600">100g - 112 calories</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-text">Brown Rice</h3>
+                        <p class="text-sm text-gray-600">100g - 112 calories</p>
                         <div class="mt-2 flex justify-between text-sm">
                             <span>Protein: 2.6g</span>
                             <span>Carbs: 23.5g</span>
                             <span>Fats: 0.9g</span>
                         </div>
                     </div>
-                    <div class="bg-light-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-primary-900">Salmon</h3>
-                        <p class="text-sm text-light-600">100g - 208 calories</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-text">Salmon</h3>
+                        <p class="text-sm text-gray-600">100g - 208 calories</p>
                         <div class="mt-2 flex justify-between text-sm">
                             <span>Protein: 22g</span>
                             <span>Carbs: 0g</span>
